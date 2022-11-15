@@ -1,0 +1,15 @@
+name: Gplug
+version: '${project.version}'
+main: beaver.ru.gplug.Gplug
+api-version: 1.19
+load: STARTUP
+commands:
+  scuba:
+    description: "Выдаёт скафандр"
+    usage: /scuba
+    permission: Gplug.scuba
+    permission-message: "У вас нет прав!"
+
+permissions:
+  Gplug.scuba:
+    description: "Разрешает получать акволанг коммандой"
