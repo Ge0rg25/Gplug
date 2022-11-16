@@ -1,14 +1,11 @@
 package beaver.ru.gplug.Events;
 
 import beaver.ru.gplug.Gplug;
-import beaver.ru.gplug.Misc.CustomItems;
-import jdk.javadoc.internal.doclets.toolkit.util.ClassUseMapper;
-import org.bukkit.Material;
-import org.bukkit.entity.Item;
+import beaver.ru.gplug.Misc.CustomItems.CustomItems;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.entity.EntityAirChangeEvent;
 import org.bukkit.inventory.ItemStack;
 
 
@@ -18,11 +15,8 @@ public class BreatheUnderwater implements Listener {
     }
 
     @EventHandler
-    public void onSuffocate(EntityDamageEvent event) {
+    public void onSuffocate(EntityAirChangeEvent event) {
         if (!(event.getEntity() instanceof Player)) {
-            return;
-        }
-        if (!(event.getCause() == EntityDamageEvent.DamageCause.DROWNING)) {
             return;
         }
         Player player = (Player) event.getEntity();
@@ -34,6 +28,5 @@ public class BreatheUnderwater implements Listener {
             player.setRemainingAir(300);
             event.setCancelled(true);
         }
-        return;
     }
 }
