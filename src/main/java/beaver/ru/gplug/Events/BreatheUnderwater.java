@@ -1,6 +1,5 @@
 package beaver.ru.gplug.Events;
 
-import beaver.ru.gplug.Gplug;
 import beaver.ru.gplug.Misc.CustomItems.CustomItems;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -10,9 +9,6 @@ import org.bukkit.inventory.ItemStack;
 
 
 public class BreatheUnderwater implements Listener {
-    public BreatheUnderwater(Gplug plugin) {
-        plugin.getServer().getPluginManager().registerEvents(this, plugin);
-    }
 
     @EventHandler
     public void onSuffocate(EntityAirChangeEvent event) {
